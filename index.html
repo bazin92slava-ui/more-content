@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My page🤍</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --text:#ffffff;
+      --shadow: rgba(0,0,0,.55);
+      --icon:#ffffff;
+      --glass: rgba(255,255,255,.06);
+      --glass2: rgba(255,255,255,.14);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family: "Playfair Display", serif;
+      color:var(--text);
+      overflow:hidden;
+      background:#000;
+    }
+
+    /* Background tuned for portrait */
+    .bg{
+      position:fixed; inset:0;
+      background:
+        radial-gradient(1000px 700px at 50% 28%, rgba(255,255,255,.04), transparent 60%),
+        linear-gradient(to bottom,
+          rgba(0,0,0,.05) 0%,
+          rgba(0,0,0,.25) 40%,
+          rgba(0,0,0,.65) 75%,
+          rgba(0,0,0,.85) 100%
+        ),
+        url("bg.JPG");
+      background-size:cover;
+      background-position:center 22%; /* keeps face clean */
+      transform: scale(1.03);
+    }
+
+    .vignette{
+      position:fixed; inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(1200px 800px at 50% 35%, rgba(255,255,255,.05), transparent 65%),
+        radial-gradient(900px 700px at 50% 90%, rgba(0,0,0,0), rgba(0,0,0,.6));
+    }
+
+    /* Golden ratio lower alignment */
+    .wrap{
+      position:relative;
+      height:100%;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:0 24px 18vh 24px;
+    }
+
+    .content{
+      text-align:center;
+      animation: fadeUp 1s ease both;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0; transform:translateY(30px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    h1{
+      margin:0 0 22px;
+      font-size: clamp(24px, 4vw, 46px);
+      font-weight:500;
+      letter-spacing:.5px;
+      text-shadow: 0 15px 35px var(--shadow);
+    }
+
+    .btns{
+      display:flex;
+      gap:26px;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .circle{
+      width:82px;
+      height:82px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      text-decoration:none;
+      background: linear-gradient(180deg, var(--glass2), var(--glass));
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow:
+        0 25px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.2);
+      transition: all .2s ease;
+    }
+
+    .circle:hover{
+      transform:translateY(-3px);
+      box-shadow:
+        0 30px 70px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.25);
+    }
+
+    .icon{
+      width:38px;
+      height:38px;
+      fill: var(--icon);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="vignette"></div>
+
+  <main class="wrap">
+    <div class="content">
+      <h1>My page🤍</h1>
+
+      <div class="btns">
+        <a class="circle" href="https://instagram.com/synthia.qora" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+        </a>
+
+        <a class="circle" href="https://www.threads.net/@synthia.qora" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24">
+            <rect x="6" y="6" width="12" height="12" rx="6"/>
+          </svg>
+        </a>
+
+        <a class="circle" href="https://t.me/+hc4xa9VpHJczOTFi" target="_blank">
+          <svg class="icon" viewBox="0 0 24 24">
+            <polygon points="2,12 22,4 18,20 12,14 8,18"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
